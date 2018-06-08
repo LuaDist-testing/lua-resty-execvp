@@ -1,0 +1,3 @@
+/lua-resty-*-*
+!*.rockspec
+lua_modules

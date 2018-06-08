@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: quay.io/3scale/s2i-openresty-centos7:master
+        environment:
+          ROVER: /usr/local/openresty/luajit/bin/rover
+    working_directory: /opt/app-root/app
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - lua-modules-{{ arch }}-{{ checksum "Roverfile.lock" }}
+            - lua-modules-{{ arch }}-{{ .Branch }}
+            - lua-modules-{{ arch }}-master
+      - run: ${ROVER} install
+      - save_cache:
+          key: lua-modules-{{ arch }}-{{ checksum "Roverfile.lock" }}
+          paths:
+            - lua_modules
+      - run: ${ROVER}  exec busted
