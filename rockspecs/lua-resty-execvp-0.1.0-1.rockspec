@@ -1,18 +1,10 @@
--- This file was automatically generated for the LuaDist project.
-
 package = "lua-resty-execvp"
 version = "0.1.0-1"
--- LuaDist source
 source = {
-  tag = "0.1.0-1",
-  url = "git://github.com/LuaDist-testing/lua-resty-execvp.git"
+   url = "https://github.com/3scale/lua-resty-execvp/archive/v0.1.0-1.tar.gz",
+   md5 = "1372ce12a94f261d49cefa34fc4f2d3e",
+   dir = "lua-resty-execvp-0.1.0-1",
 }
--- Original source
--- source = {
---    url = "https://github.com/3scale/lua-resty-execvp/archive/v0.1.0-1.tar.gz",
---    md5 = "1372ce12a94f261d49cefa34fc4f2d3e",
---    dir = "lua-resty-execvp-0.1.0-1",
--- }
 description = {
    summary = "lua-resty-execvp - execvp FFI wrapper",
    detailed = "lua-resty-execvp - FFI wrapper to call exec and replace current process",

@@ -45,7 +45,7 @@ local function execvp(filename, args, env)
   local cargv = ffi.cast("char *const*", argv)
 
   for name, value in pairs(env or {}) do
-    assert(setenv(name, value))
+    assert(setenv(name, tostring(value)))
   end
 
   C.execvp(filename, cargv)
@@ -54,7 +54,7 @@ end
 
 
 local _M = {
-  _VERSION = '0.1.0',
+  _VERSION = '0.1.1',
 }
 
 
